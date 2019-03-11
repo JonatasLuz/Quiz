@@ -110,6 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="84" y="143"/>
         </scene>
         <!--Pergunta View Controller-->
         <scene sceneID="3tn-1r-JTg">
@@ -119,33 +120,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Pergunta Text Field" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Gm-Ymt">
-                                <rect key="frame" x="67" y="104" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZq-ak-Fsd">
+                                <rect key="frame" x="0.0" y="30" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.65490196079999996" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fwo-Hy-MtB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDK-qp-eX4">
+                                <rect key="frame" x="0.0" y="507" width="375" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-h7-7Oc">
+                                        <rect key="frame" x="50" y="0.0" width="275" height="145"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-UZ-6bo">
+                                                <rect key="frame" x="102.5" y="0.0" width="70" height="48.5"/>
+                                                <state key="normal" title="Resposta1"/>
+                                                <connections>
+                                                    <action selector="resposta1Action:" destination="kEW-Je-dOG" eventType="touchUpInside" id="qfO-T0-D4g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ses-do-vHD">
+                                                <rect key="frame" x="101" y="48.5" width="73" height="48"/>
+                                                <state key="normal" title="Resposta2"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-PU-8gS">
+                                                <rect key="frame" x="101" y="96.5" width="73" height="48.5"/>
+                                                <state key="normal" title="Resposta3"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ses-do-vHD">
-                                <rect key="frame" x="156" y="443" width="134" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-PU-8gS">
-                                <rect key="frame" x="200" y="497" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-UZ-6bo">
-                                <rect key="frame" x="215" y="368" width="46" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="resposta1Action:" destination="kEW-Je-dOG" eventType="touchUpInside" id="qfO-T0-D4g"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="YYi-h7-7Oc" firstAttribute="top" secondItem="DDK-qp-eX4" secondAttribute="top" id="8Bx-ok-RsK"/>
+                                    <constraint firstAttribute="trailing" secondItem="YYi-h7-7Oc" secondAttribute="trailing" constant="50" id="CAh-El-QZa"/>
+                                    <constraint firstAttribute="bottom" secondItem="YYi-h7-7Oc" secondAttribute="bottom" constant="5" id="DmS-xV-7dn"/>
+                                    <constraint firstItem="YYi-h7-7Oc" firstAttribute="leading" secondItem="DDK-qp-eX4" secondAttribute="leading" constant="50" id="cap-V6-7BB"/>
+                                    <constraint firstAttribute="height" constant="150" id="xPD-y8-Lsi"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVL-2m-VLv">
+                                <rect key="frame" x="0.0" y="92" width="375" height="413"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pergunta Text Field" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Gm-Ymt">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="403"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nHE-Gm-Ymt" firstAttribute="leading" secondItem="NVL-2m-VLv" secondAttribute="leading" id="28Y-ND-3Gv"/>
+                                    <constraint firstAttribute="trailing" secondItem="nHE-Gm-Ymt" secondAttribute="trailing" id="A7B-kw-q6T"/>
+                                    <constraint firstItem="nHE-Gm-Ymt" firstAttribute="top" secondItem="NVL-2m-VLv" secondAttribute="top" constant="5" id="MUd-iU-Xnp"/>
+                                    <constraint firstAttribute="bottom" secondItem="nHE-Gm-Ymt" secondAttribute="bottom" constant="5" id="SAY-mP-fx3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DDK-qp-eX4" firstAttribute="top" secondItem="NVL-2m-VLv" secondAttribute="bottom" constant="2" id="74y-0u-1Oj"/>
+                            <constraint firstItem="OZq-ak-Fsd" firstAttribute="top" secondItem="9AE-xH-drC" secondAttribute="top" constant="10" id="9Dm-H1-te7"/>
+                            <constraint firstItem="DDK-qp-eX4" firstAttribute="trailing" secondItem="9AE-xH-drC" secondAttribute="trailing" id="FyD-2b-s9G"/>
+                            <constraint firstItem="NVL-2m-VLv" firstAttribute="top" secondItem="OZq-ak-Fsd" secondAttribute="bottom" constant="2" id="HfE-KO-xdi"/>
+                            <constraint firstItem="DDK-qp-eX4" firstAttribute="leading" secondItem="9AE-xH-drC" secondAttribute="leading" id="JTL-4x-m2Z"/>
+                            <constraint firstAttribute="bottom" secondItem="DDK-qp-eX4" secondAttribute="bottom" constant="10" id="NJm-yw-wtf"/>
+                            <constraint firstItem="9AE-xH-drC" firstAttribute="trailing" secondItem="NVL-2m-VLv" secondAttribute="trailing" id="QBK-ZZ-geH"/>
+                            <constraint firstItem="OZq-ak-Fsd" firstAttribute="leading" secondItem="9AE-xH-drC" secondAttribute="leading" id="WQs-ZZ-rRO"/>
+                            <constraint firstItem="OZq-ak-Fsd" firstAttribute="trailing" secondItem="9AE-xH-drC" secondAttribute="trailing" id="nbP-yZ-b4U"/>
+                            <constraint firstItem="NVL-2m-VLv" firstAttribute="leading" secondItem="9AE-xH-drC" secondAttribute="leading" id="nyO-b4-YtK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9AE-xH-drC"/>
                     </view>
                     <connections>
