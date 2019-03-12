@@ -14,6 +14,7 @@ class PerguntaViewController: UIViewController {
     
     
 
+    @IBOutlet weak var PerguntaAtualView: UILabel!
     @IBOutlet weak var resposta1: UIButton!
     @IBOutlet weak var resposta2: UIButton!
     @IBOutlet weak var resposta3: UIButton!
@@ -42,7 +43,7 @@ class PerguntaViewController: UIViewController {
         
        
         
-        
+        PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
         pergunta.text=(questoes[0].questao)
         resposta1.setTitle(questoes[0].respostas[0].resposta, for:[])
         resposta2.setTitle(questoes[0].respostas[1].resposta, for: [])
@@ -50,9 +51,35 @@ class PerguntaViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
 
-    @IBAction func resposta1Action(_ sender: UIButton) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC : ResultadoViewController = segue.destination as! ResultadoViewController
+        destVC.acertos = qtdAcertos
+    }
+
+    @IBAction func resposta1Action(_ sender: Any) {
+        if questaoAtual != questoes.count{
+            if respostasTeste[questaoAtual].indice == 0{
+                qtdAcertos += 1
+            }
+            pergunta.text=(questoes[questaoAtual].questao)
+            resposta1.setTitle(questoes[questaoAtual].respostas[0].resposta, for:[])
+            resposta2.setTitle(questoes[questaoAtual].respostas[1].resposta, for: [])
+            resposta3.setTitle(questoes[questaoAtual].respostas[2].resposta, for: [])
+        }
+        else{
+            var tipoImagem : String = "Lose"
+            if qtdAcertos >= 2{
+                tipoImagem = "Win"
+            
+            }
+            performSegue(withIdentifier: "telaResultado", sender: self)
+        }
+    
+    }
+    
+    
+    @IBAction func resposta2Action(_ sender: Any) {
         if questaoAtual != questoes.count{
             if respostasTeste[questaoAtual].indice == 0{
                 
@@ -63,10 +90,32 @@ class PerguntaViewController: UIViewController {
             resposta2.setTitle(questoes[questaoAtual].respostas[1].resposta, for: [])
             resposta3.setTitle(questoes[questaoAtual].respostas[2].resposta, for: [])
             questaoAtual += 1
+            PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
+        }
+        else{
             
         }
+        
     }
     
+    
+    @IBAction func resposta3Action(_ sender: Any) {
+        if questaoAtual != questoes.count{
+            if respostasTeste[questaoAtual].indice == 0{
+                
+                qtdAcertos += 1
+            }
+            pergunta.text=(questoes[questaoAtual].questao)
+            resposta1.setTitle(questoes[questaoAtual].respostas[0].resposta, for:[])
+            resposta2.setTitle(questoes[questaoAtual].respostas[1].resposta, for: [])
+            resposta3.setTitle(questoes[questaoAtual].respostas[2].resposta, for: [])
+            questaoAtual += 1
+            PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
+        } else{
+            
+        }
+        
+    }
     
     
     
