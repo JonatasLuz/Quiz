@@ -229,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQW-Br-5hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1716" y="503"/>
+            <point key="canvasLocation" x="-1620" y="91"/>
         </scene>
         <!--Pergunta View Controller-->
         <scene sceneID="3tn-1r-JTg">
@@ -264,26 +264,25 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-h7-7Oc">
                                         <rect key="frame" x="50" y="0.0" width="220" height="145"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-UZ-6bo">
-                                                <rect key="frame" x="75" y="0.0" width="70" height="48.5"/>
-                                                <state key="normal" title="Resposta1"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8n-kb-N4G">
+                                                <rect key="frame" x="72.5" y="0.0" width="75" height="48.5"/>
+                                                <state key="normal" title="Resposta 1"/>
                                                 <connections>
-                                                    <action selector="resposta1Action:" destination="kEW-Je-dOG" eventType="touchUpInside" id="sJ5-bB-SnJ"/>
-                                                    <action selector="resposta2Action:" destination="kEW-Je-dOG" eventType="touchUpInside" id="quI-Jf-hb7"/>
+                                                    <action selector="respostaAction:" destination="kEW-Je-dOG" eventType="touchUpInside" id="QQE-3U-gQn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ses-do-vHD">
-                                                <rect key="frame" x="73.5" y="48.5" width="73" height="48"/>
-                                                <state key="normal" title="Resposta2"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gV-G0-PxP">
+                                                <rect key="frame" x="72.5" y="48.5" width="75" height="48"/>
+                                                <state key="normal" title="Resposta 1"/>
                                                 <connections>
-                                                    <action selector="resposta2Action:" destination="kEW-Je-dOG" eventType="touchUpInside" id="tON-aW-cMh"/>
+                                                    <action selector="respostaAction:" destination="kEW-Je-dOG" eventType="touchUpInside" id="Rom-XB-fYK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-PU-8gS">
-                                                <rect key="frame" x="73.5" y="96.5" width="73" height="48.5"/>
-                                                <state key="normal" title="Resposta3"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-Ap-xKM">
+                                                <rect key="frame" x="72.5" y="96.5" width="75" height="48.5"/>
+                                                <state key="normal" title="Resposta 1"/>
                                                 <connections>
-                                                    <action selector="resposta3Action:" destination="kEW-Je-dOG" eventType="touchUpInside" id="hDX-h4-ZaC"/>
+                                                    <action selector="respostaAction:" destination="kEW-Je-dOG" eventType="touchUpInside" id="Bfc-SZ-A81"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -335,15 +334,15 @@
                     <connections>
                         <outlet property="PerguntaAtualView" destination="GUa-WW-ReD" id="UZB-pB-Ugx"/>
                         <outlet property="pergunta" destination="nHE-Gm-Ymt" id="dVW-Pk-gTO"/>
-                        <outlet property="resposta1" destination="KuC-UZ-6bo" id="wZ4-Nv-9Xe"/>
-                        <outlet property="resposta2" destination="ses-do-vHD" id="chG-1q-TJO"/>
-                        <outlet property="resposta3" destination="q6E-PU-8gS" id="BH9-PP-aFn"/>
+                        <outlet property="resposta1" destination="W8n-kb-N4G" id="yRM-Tw-sua"/>
+                        <outlet property="resposta2" destination="7gV-G0-PxP" id="xje-XF-ZIv"/>
+                        <outlet property="resposta3" destination="5bm-Ap-xKM" id="t4K-7x-6RQ"/>
                         <segue destination="dKF-Gb-KKV" kind="show" identifier="telaResultado" id="E2n-Qz-ysK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yii-YK-6lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-77" y="10"/>
+            <point key="canvasLocation" x="-135" y="91"/>
         </scene>
         <!--Resultado View Controller-->
         <scene sceneID="g6m-Im-FfL">
@@ -375,9 +374,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXN-iw-E72">
                                 <rect key="frame" x="0.0" y="443" width="320" height="135"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUJ-nW-bUd">
-                                        <rect key="frame" x="140" y="52" width="41" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUJ-nW-bUd">
+                                        <rect key="frame" x="130" y="50" width="60" height="35"/>
                                         <state key="normal" title="Voltar"/>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="T16-7n-cjW"/>
@@ -387,14 +385,25 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="3mV-68-cL7"/>
+                                    <constraint firstAttribute="bottom" secondItem="AUJ-nW-bUd" secondAttribute="bottom" constant="50" id="4aG-Sh-f5Z"/>
+                                    <constraint firstItem="AUJ-nW-bUd" firstAttribute="top" secondItem="dXN-iw-E72" secondAttribute="top" constant="50" id="MsD-Lm-KIr"/>
+                                    <constraint firstAttribute="trailing" secondItem="AUJ-nW-bUd" secondAttribute="trailing" constant="130" id="c4W-Ls-Npd"/>
+                                    <constraint firstItem="AUJ-nW-bUd" firstAttribute="leading" secondItem="dXN-iw-E72" secondAttribute="leading" constant="130" id="upU-qD-r4h"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lose" translatesAutoresizingMaskIntoConstraints="NO" id="ihW-y5-qkk">
+                                <rect key="frame" x="40" y="150" width="240" height="233"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dXN-iw-E72" firstAttribute="top" secondItem="ihW-y5-qkk" secondAttribute="bottom" constant="60" id="AN0-3Z-eHs"/>
                             <constraint firstItem="dXN-iw-E72" firstAttribute="leading" secondItem="9Hm-QJ-aIL" secondAttribute="leading" id="ENJ-02-8tV"/>
                             <constraint firstItem="VPj-v7-gZi" firstAttribute="leading" secondItem="9Hm-QJ-aIL" secondAttribute="leading" id="Ley-Lp-qzR"/>
+                            <constraint firstItem="9Hm-QJ-aIL" firstAttribute="trailing" secondItem="ihW-y5-qkk" secondAttribute="trailing" constant="40" id="R8P-US-EVr"/>
                             <constraint firstItem="dXN-iw-E72" firstAttribute="bottom" secondItem="9Hm-QJ-aIL" secondAttribute="bottom" constant="10" id="RHL-h1-PEu"/>
+                            <constraint firstItem="ihW-y5-qkk" firstAttribute="top" secondItem="VPj-v7-gZi" secondAttribute="bottom" constant="60" id="Vs4-Ha-Zel"/>
+                            <constraint firstItem="ihW-y5-qkk" firstAttribute="leading" secondItem="9Hm-QJ-aIL" secondAttribute="leading" constant="40" id="ZEm-Zc-YlR"/>
                             <constraint firstItem="VPj-v7-gZi" firstAttribute="trailing" secondItem="9Hm-QJ-aIL" secondAttribute="trailing" id="b8g-oo-ynO"/>
                             <constraint firstItem="9Hm-QJ-aIL" firstAttribute="trailing" secondItem="dXN-iw-E72" secondAttribute="trailing" id="mSn-6f-yQR"/>
                             <constraint firstItem="VPj-v7-gZi" firstAttribute="top" secondItem="9Hm-QJ-aIL" secondAttribute="top" constant="10" id="wgS-ze-eJz"/>
@@ -402,16 +411,18 @@
                         <viewLayoutGuide key="safeArea" id="9Hm-QJ-aIL"/>
                     </view>
                     <connections>
+                        <outlet property="ImageResultado" destination="ihW-y5-qkk" id="xMG-EP-3mD"/>
                         <outlet property="labelQtdAcertos" destination="bL1-Ka-Sw3" id="gft-1o-lBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TnQ-Wk-KNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733" y="863"/>
+            <point key="canvasLocation" x="-834" y="822"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="240" height="240"/>
+        <image name="lose" width="704" height="396"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="T16-7n-cjW"/>

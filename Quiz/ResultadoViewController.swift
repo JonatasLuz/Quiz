@@ -14,9 +14,17 @@ class ResultadoViewController: UIViewController {
     @IBOutlet weak var labelQtdAcertos: UILabel!
     
     
+    @IBOutlet weak var ImageResultado: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         labelQtdAcertos.text=("Qtd de Acertos: \(acertos)")
+        if acertos <= 2{
+            ImageResultado.image = UIImage(named: "lose")
+
+        }else{
+            ImageResultado.image = UIImage(named: "win")
+
+        }
 
         // Do any additional setup after loading the view.
     }
