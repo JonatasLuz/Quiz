@@ -18,7 +18,7 @@ class ResultadoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         labelQtdAcertos.text=("Qtd de Acertos: \(acertos)")
-        if acertos <= 2{
+        if acertos < 2{
             ImageResultado.image = UIImage(named: "lose")
 
         }else{

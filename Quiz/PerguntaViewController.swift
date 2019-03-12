@@ -19,8 +19,6 @@ class PerguntaViewController: UIViewController {
     
     @IBOutlet weak var PerguntaAtualView: UILabel!
     var questoes : [Pergunta] = []
-    let perguntasTeste : [String] = ["Qual ator de Star Trek: Original Series apareceu também no filme reboot de 2009?","Quem é o capião da USS Enterprise na série The Next Generation?","Qual a raça do comandante Spock?"]
-    var respostasTeste:[(resposta : String, indice : Int )] = [(resposta : "Leonard Nimoy",indice : 0),(resposta : "Willian Shatner", indice : 1), (resposta :"Nichelle Nichols", indice : 2),(resposta: "Jean-Luc Picard", indice:0), (resposta:"James T. Kirk", indice:1),(resposta:"Christopher Pike", indice:2),(resposta:"Humano e Vulcan", indice:0),(resposta:"Humano e Klingon", indice:1),(resposta:"Ferengi e Betazoide", indice:2)]
     
     var qtdAcertos : Int = 0
 
@@ -28,20 +26,8 @@ class PerguntaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var contador : Int = 0
-        for carregaArrayPergunta in 0 ... 2{
-            let questao = Pergunta()
-            questao.setPergunta(perguntasTeste[carregaArrayPergunta])
-            for _ in 0 ... 2{
-                questao.setResposta(resp: respostasTeste[contador])
-                contador += 1
-            }
-            questoes.append(questao)
-            
-        }
 
-        
-       
+      //Chama as perguntas a primeira vez
         
         PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
         pergunta.text=(questoes[0].questao)
@@ -85,12 +71,7 @@ class PerguntaViewController: UIViewController {
             resposta3.tag = questoes[questaoAtual].respostas[1].indice
             questaoAtual += 1
             PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
-        }
-            else{
-                var tipoImagem : String = "Lose"
-                if qtdAcertos >= 2{
-                    tipoImagem = "Win"
-                }
+        }else{
                 performSegue(withIdentifier: "telaResultado", sender: self)
             }
     }

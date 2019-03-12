@@ -61,25 +61,25 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dks-8F-4CN">
                                         <rect key="frame" x="50" y="0.0" width="220" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-co-Xao">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pj-6r-8PL">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="45"/>
                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="19"/>
                                                 <state key="normal" title="Iniciar Quiz"/>
                                                 <connections>
-                                                    <segue destination="kEW-Je-dOG" kind="show" id="zEc-iT-o36"/>
+                                                    <action selector="iniciaQuizAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SaE-eo-DoG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pj-6r-8PL">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqP-to-gaJ">
                                                 <rect key="frame" x="0.0" y="45" width="220" height="45"/>
                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="19"/>
                                                 <state key="normal" title="Incluir Pergunta"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bl-UA-hca">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COo-jL-Row">
                                                 <rect key="frame" x="0.0" y="90" width="220" height="45"/>
                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="19"/>
                                                 <state key="normal" title="Sobre"/>
                                                 <connections>
-                                                    <segue destination="p7w-4j-5FM" kind="show" id="rrq-uk-1kL"/>
+                                                    <action selector="sobreAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0z-aN-cH3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -110,10 +110,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="Iniciar" destination="5pj-6r-8PL" id="jWT-5I-kTG"/>
+                        <outlet property="botaoSobre" destination="COo-jL-Row" id="zRZ-Ql-hJ8"/>
+                        <segue destination="kEW-Je-dOG" kind="show" identifier="segueQuiz" id="uZ3-69-L5f"/>
+                        <segue destination="p7w-4j-5FM" kind="show" identifier="segueSobre" id="cYR-sh-eaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="91"/>
+            <point key="canvasLocation" x="-750" y="2"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Und-gW-Oty">
@@ -229,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQW-Br-5hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1620" y="91"/>
+            <point key="canvasLocation" x="-1601" y="1"/>
         </scene>
         <!--Pergunta View Controller-->
         <scene sceneID="3tn-1r-JTg">
@@ -342,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yii-YK-6lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="91"/>
+            <point key="canvasLocation" x="101" y="12"/>
         </scene>
         <!--Resultado View Controller-->
         <scene sceneID="g6m-Im-FfL">
@@ -417,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TnQ-Wk-KNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="822"/>
+            <point key="canvasLocation" x="-1601" y="800"/>
         </scene>
     </scenes>
     <resources>
@@ -425,6 +431,6 @@
         <image name="lose" width="704" height="396"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T16-7n-cjW"/>
+        <segue reference="m39-Wp-2sW"/>
     </inferredMetricsTieBreakers>
 </document>
