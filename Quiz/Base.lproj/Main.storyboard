@@ -73,6 +73,9 @@
                                                 <rect key="frame" x="0.0" y="45" width="220" height="45"/>
                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="19"/>
                                                 <state key="normal" title="Incluir Pergunta"/>
+                                                <connections>
+                                                    <action selector="incuirAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWe-fh-mmw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COo-jL-Row">
                                                 <rect key="frame" x="0.0" y="90" width="220" height="45"/>
@@ -115,6 +118,7 @@
                         <outlet property="botaoSobre" destination="COo-jL-Row" id="zRZ-Ql-hJ8"/>
                         <segue destination="kEW-Je-dOG" kind="show" identifier="segueQuiz" id="uZ3-69-L5f"/>
                         <segue destination="p7w-4j-5FM" kind="show" identifier="segueSobre" id="cYR-sh-eaG"/>
+                        <segue destination="ock-0z-8gp" kind="show" identifier="segueIncluir" id="MpM-xF-54q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -237,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="-1601" y="1"/>
         </scene>
-        <!--Pergunta View Controller-->
+        <!--segueIncluir-->
         <scene sceneID="3tn-1r-JTg">
             <objects>
-                <viewController id="kEW-Je-dOG" customClass="PerguntaViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="segueIncluir" id="kEW-Je-dOG" customClass="PerguntaViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mFC-cu-SZl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,6 +354,34 @@
             </objects>
             <point key="canvasLocation" x="101" y="12"/>
         </scene>
+        <!--Incluir Table View Controller-->
+        <scene sceneID="Ec1-uq-1Gg">
+            <objects>
+                <tableViewController id="ock-0z-8gp" customClass="incluirTableViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xoF-6i-8eW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="dFZ-D0-mV0">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dFZ-D0-mV0" id="vv3-ba-Oyt">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ock-0z-8gp" id="Xdh-Bt-Fp2"/>
+                            <outlet property="delegate" destination="ock-0z-8gp" id="xIM-RO-1Ye"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8w1-BA-RNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-750" y="1012"/>
+        </scene>
         <!--Resultado View Controller-->
         <scene sceneID="g6m-Im-FfL">
             <objects>
@@ -431,6 +463,6 @@
         <image name="lose" width="704" height="396"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m39-Wp-2sW"/>
+        <segue reference="T16-7n-cjW"/>
     </inferredMetricsTieBreakers>
 </document>

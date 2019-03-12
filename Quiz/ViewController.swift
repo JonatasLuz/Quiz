@@ -17,9 +17,15 @@ class ViewController: UIViewController {
     var respostasTeste:[(resposta : String, indice : Int )] = [(resposta : "Leonard Nimoy",indice : 0),(resposta : "Willian Shatner", indice : 1), (resposta :"Nichelle Nichols", indice : 2),(resposta: "Jean-Luc Picard", indice:0), (resposta:"James T. Kirk", indice:1),(resposta:"Christopher Pike", indice:2),(resposta:"Humano e Vulcan", indice:0),(resposta:"Humano e Klingon", indice:1),(resposta:"Ferengi e Betazoide", indice:2)]
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueQuiz"{
+        if segue.identifier == "segueQuiz" || segue.identifier == "segueIncluir"{
+            if segue.identifier == "segueIncluir"{
+                let destVC : incluirTableViewController = segue.destination as! incluirTableViewController
+                destVC.questoes = questoes
+                
+            }else{
             let destVC : PerguntaViewController = segue.destination as! PerguntaViewController
-            destVC.questoes = questoes
+                destVC.questoes = questoes
+            }
         }
     }
 
@@ -55,6 +61,9 @@ class ViewController: UIViewController {
         }
     }
     
-
+    @IBAction func incuirAction(_ sender: Any) {
+        performSegue(withIdentifier: "segueIncluir", sender: self)
+    }
+    
 }
 
