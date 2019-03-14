@@ -29,6 +29,7 @@ class PerguntaViewController: UIViewController {
 
       //Chama as perguntas a primeira vez
         
+        questoes[0].respostas.shuffle()
         PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
         pergunta.text=(questoes[0].questao)
         resposta1.setTitle(questoes[0].respostas[0].resposta, for:[])
@@ -36,7 +37,7 @@ class PerguntaViewController: UIViewController {
         resposta2.setTitle(questoes[0].respostas[1].resposta, for: [])
         resposta2.tag = questoes[0].respostas[1].indice
         resposta3.setTitle(questoes[0].respostas[2].resposta, for: [])
-        resposta2.tag = questoes[0].respostas[2].indice
+        resposta3.tag = questoes[0].respostas[2].indice
         
         // Do any additional setup after loading the view.
     }
@@ -57,18 +58,19 @@ class PerguntaViewController: UIViewController {
                 qtdAcertos += 1
             }
         }else if sender.isEqual(resposta3){
-            if resposta2.tag == 0{
+            if resposta3.tag == 0{
                 qtdAcertos += 1
             }
         }
         if questaoAtual != questoes.count{
             pergunta.text=(questoes[questaoAtual].questao)
+            questoes[questaoAtual].respostas.shuffle()
             resposta1.setTitle(questoes[questaoAtual].respostas[0].resposta, for:[])
             resposta1.tag = questoes[questaoAtual].respostas[0].indice
             resposta2.setTitle(questoes[questaoAtual].respostas[1].resposta, for: [])
             resposta2.tag = questoes[questaoAtual].respostas[1].indice
             resposta3.setTitle(questoes[questaoAtual].respostas[2].resposta, for: [])
-            resposta3.tag = questoes[questaoAtual].respostas[1].indice
+            resposta3.tag = questoes[questaoAtual].respostas[2].indice
             questaoAtual += 1
             PerguntaAtualView.text=("Pergunta \(questaoAtual) de \(questoes.count)")
         }else{
