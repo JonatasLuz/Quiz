@@ -11,14 +11,18 @@ import UIKit
 class ResultadoViewController: UIViewController {
     
     var acertos : Int = 0
-    @IBOutlet weak var labelQtdAcertos: UILabel!
+    var quiz : QuizViewModel = QuizViewModel ()
+
     
+    @IBOutlet weak var labelQtdAcertos: UILabel!
     
     @IBOutlet weak var ImageResultado: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelQtdAcertos.text=("Qtd de Acertos: \(acertos)")
-        if acertos < 2{
+        
+        let resultado : Int = acertos
+        labelQtdAcertos.text=("Qtd de Acertos: \(resultado)")
+        if acertos < quiz.questoes.count/2+1{
             ImageResultado.image = UIImage(named: "lose")
 
         }else{

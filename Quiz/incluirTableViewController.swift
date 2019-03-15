@@ -10,10 +10,12 @@ import UIKit
 
 class incluirTableViewController: UITableViewController {
     
-    var questoes : [Pergunta] = []
+    @IBOutlet var incluirPerguntaButton: UITableView!
+    @IBOutlet weak var voltarMenu: UIBarButtonItem!
+    var quiz : QuizViewModel = QuizViewModel()
+    var indexPath = -1
 
     override func viewDidLoad() {
-        navigationItem.rightBarButtonItems?.append(editButtonItem)
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -30,20 +32,37 @@ class incluirTableViewController: UITableViewController {
         return 1
     }
 
+    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return questoes.count
+        return quiz.questoes.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath)
-
-        // Configure the cell...
-
+        
+        //cell.textLabel?.text = quiz.questoes[indexPath.row].questao
+        
+        if let perguntaButton = cell.viewWithTag(1000) as? UIButton{
+            perguntaButton.setTitle(quiz.questoes[quiz.questaoAtual].questao, for:[])
+            quiz.proximaPergunta()
+        }
         return cell
     }
 
+    @IBAction func voltarMenuAction(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ViewController = storyBoard.instantiateViewController(withIdentifier: "menu") as! ViewController
+        self.present(ViewController, animated: true, completion: nil)
+    }
+    @IBAction func incluirPerguntaAction(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let IncluirPerguntaViewController = storyBoard.instantiateViewController(withIdentifier: "Incluir") as! IncluirPerguntaViewController
+        self.present(IncluirPerguntaViewController, animated: true, completion: nil)
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

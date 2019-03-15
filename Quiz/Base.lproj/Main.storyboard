@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQW-Br-5hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1601" y="1"/>
+            <point key="canvasLocation" x="-1779" y="120"/>
         </scene>
         <!--segueIncluir-->
         <scene sceneID="3tn-1r-JTg">
@@ -310,8 +310,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVL-2m-VLv">
                                 <rect key="frame" x="0.0" y="92" width="320" height="314"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pergunta Text Field" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Gm-Ymt">
-                                        <rect key="frame" x="0.0" y="5" width="320" height="304"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Pergunta Text Field" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Gm-Ymt">
+                                        <rect key="frame" x="0.0" y="-79" width="320" height="304"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -352,7 +352,103 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yii-YK-6lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101" y="12"/>
+            <point key="canvasLocation" x="334" y="-242"/>
+        </scene>
+        <!--Incluir Pergunta View Controller-->
+        <scene sceneID="xw5-qs-Jhk">
+            <objects>
+                <viewController storyboardIdentifier="Incluir" title="Incluir Pergunta View Controller" id="lxl-8V-LWA" customClass="IncluirPerguntaViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oR2-81-O6Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-vH-Bnk">
+                                <rect key="frame" x="0.0" y="30" width="320" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="DKg-iL-wpQ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Incluir Pergunta" id="BZD-Wj-rXP"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-b0-Zma">
+                                <rect key="frame" x="0.0" y="110" width="320" height="448"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-YW-9nj">
+                                        <rect key="frame" x="10" y="10" width="300" height="300"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pergunta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="syk-Nw-IQ1">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="perguntaAction:" destination="lxl-8V-LWA" eventType="touchDown" id="qro-XP-e9D"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Resposta Correto" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBo-ka-wbo">
+                                                <rect key="frame" x="0.0" y="87" width="300" height="39.5"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="resposta1Action:" destination="lxl-8V-LWA" eventType="touchDown" id="efH-KR-aze"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Resposta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DbH-wH-8ZR">
+                                                <rect key="frame" x="0.0" y="173.5" width="300" height="40"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="resposta2Action:" destination="lxl-8V-LWA" eventType="touchDown" id="LkU-TE-PgJ"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Resposta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fM-vI-K6e">
+                                                <rect key="frame" x="0.0" y="260.5" width="300" height="39.5"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="resposta3Action:" destination="lxl-8V-LWA" eventType="touchDown" id="8TK-c3-SCk"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="0aP-Dd-d8Q"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZmO-YW-9nj" firstAttribute="top" secondItem="dwm-b0-Zma" secondAttribute="top" constant="10" id="5ei-Sb-IAn"/>
+                                    <constraint firstItem="ZmO-YW-9nj" firstAttribute="leading" secondItem="dwm-b0-Zma" secondAttribute="leading" constant="10" id="7gw-Tj-AMZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZmO-YW-9nj" secondAttribute="trailing" constant="10" id="tzo-TJ-uyp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E2v-vH-Bnk" firstAttribute="leading" secondItem="Hfg-yz-QDh" secondAttribute="leading" id="9dT-17-U8v"/>
+                            <constraint firstItem="E2v-vH-Bnk" firstAttribute="top" secondItem="Hfg-yz-QDh" secondAttribute="top" constant="10" id="EZX-CP-IB6"/>
+                            <constraint firstItem="dwm-b0-Zma" firstAttribute="trailing" secondItem="Hfg-yz-QDh" secondAttribute="trailing" id="P1S-0x-26g"/>
+                            <constraint firstItem="E2v-vH-Bnk" firstAttribute="trailing" secondItem="Hfg-yz-QDh" secondAttribute="trailing" id="WQ7-sm-qfz"/>
+                            <constraint firstItem="dwm-b0-Zma" firstAttribute="top" secondItem="E2v-vH-Bnk" secondAttribute="bottom" constant="10" id="eMT-pE-NDq"/>
+                            <constraint firstItem="dwm-b0-Zma" firstAttribute="leading" secondItem="Hfg-yz-QDh" secondAttribute="leading" id="igB-hX-pU8"/>
+                            <constraint firstItem="Hfg-yz-QDh" firstAttribute="bottom" secondItem="dwm-b0-Zma" secondAttribute="bottom" constant="10" id="stT-Az-SRT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hfg-yz-QDh"/>
+                    </view>
+                    <connections>
+                        <outlet property="perguntaTextField" destination="LBo-ka-wbo" id="Ak8-ge-57N"/>
+                        <outlet property="resposta1TextField" destination="LBo-ka-wbo" id="UCR-2c-EaX"/>
+                        <outlet property="resposta2" destination="DbH-wH-8ZR" id="OaE-ar-xIk"/>
+                        <outlet property="resposta3" destination="3fM-vI-K6e" id="DIF-bw-Udj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Os5-AD-YKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1785" y="896.83098591549299"/>
         </scene>
         <!--Incluir Table View Controller-->
         <scene sceneID="Ec1-uq-1Gg">
@@ -362,13 +458,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="6fz-iR-M2F">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Incluir / Editar" id="qm7-VF-n6T">
+                                    <barButtonItem key="leftBarButtonItem" title="Voltar" id="wbz-b7-0YL">
+                                        <connections>
+                                            <action selector="voltarMenuAction:" destination="ock-0z-8gp" id="ilf-Dh-cjn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="aDo-GR-QQU">
+                                        <connections>
+                                            <action selector="incluirPerguntaAction:" destination="ock-0z-8gp" id="2Hr-ni-gmf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="QuizCell" rowHeight="28" id="dFZ-D0-mV0">
-                                <rect key="frame" x="0.0" y="28" width="320" height="28"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizCell" rowHeight="28" id="dFZ-D0-mV0">
+                                <rect key="frame" x="0.0" y="72" width="320" height="28"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dFZ-D0-mV0" id="vv3-ba-Oyt">
-                                    <rect key="frame" x="0.0" y="0.0" width="252" height="27.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="27.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crj-Xx-Px7">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="27.5"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="crj-Xx-Px7" secondAttribute="trailing" constant="20" symbolic="YES" id="Ykr-Y0-Pgl"/>
+                                        <constraint firstItem="crj-Xx-Px7" firstAttribute="top" secondItem="vv3-ba-Oyt" secondAttribute="top" id="dg3-jY-FEh"/>
+                                        <constraint firstAttribute="bottom" secondItem="crj-Xx-Px7" secondAttribute="bottom" id="hsr-c4-QF3"/>
+                                        <constraint firstItem="crj-Xx-Px7" firstAttribute="leading" secondItem="vv3-ba-Oyt" secondAttribute="leading" constant="20" symbolic="YES" id="qfT-Kb-MYj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -377,10 +503,14 @@
                             <outlet property="delegate" destination="ock-0z-8gp" id="xIM-RO-1Ye"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="incluirPerguntaButton" destination="xoF-6i-8eW" id="35h-G0-O6m"/>
+                        <outlet property="voltarMenu" destination="wbz-b7-0YL" id="LFw-zr-CqZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8w1-BA-RNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-750" y="1011.9718309859155"/>
+            <point key="canvasLocation" x="-750" y="841.90140845070425"/>
         </scene>
         <!--Resultado View Controller-->
         <scene sceneID="g6m-Im-FfL">
@@ -455,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TnQ-Wk-KNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1601" y="800"/>
+            <point key="canvasLocation" x="334" y="542"/>
         </scene>
     </scenes>
     <resources>
