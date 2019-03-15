@@ -58,6 +58,4 @@ class Quiz{
         questoes.append(pergunta)
     }
     
-    
-    
 }

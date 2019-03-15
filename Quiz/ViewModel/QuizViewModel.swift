@@ -11,9 +11,8 @@ import Foundation
 class QuizViewModel{
     let quiz : Quiz = Quiz()
     var qtdAcertos : Int = 0
-    
     var questaoAtual : Int = 0
-    
+
     var questoes : [Pergunta] {
         return quiz.questoes
     }
@@ -45,6 +44,23 @@ class QuizViewModel{
     
     init (){
         
+    }
+    
+    func verificaTextField(_ conteudoTexField : String)-> Bool{
+        return conteudoTexField == "Pergunta" || conteudoTexField == "Resposta Correta" || conteudoTexField == "Resposta"
+    }
+    
+    func verificaTextFieldVazio(_ textField : String) -> Bool{
+        return textField == ""
+    }
+    
+    func cadastraPergunta(_ pergunta : String, _ resposta1 : String, _ resposta2: String, _ resposta3 : String){
+        let questaoCadastro : Pergunta = Pergunta()
+        questaoCadastro.setPergunta(pergunta)
+        questaoCadastro.setResposta(resp: (resposta1,0))
+        questaoCadastro.setResposta(resp: (resposta2,1))
+        questaoCadastro.setResposta(resp: (resposta3,2))
+        quiz.adicionaPergunta(questaoCadastro)
     }
     
 }

@@ -9,8 +9,14 @@
 import UIKit
 
 class IncluirPerguntaViewController: UIViewController {
-    @IBOutlet weak var resposta1TextField: UITextField!
+    
+    var quiz: QuizViewModel = QuizViewModel()
+    
     @IBOutlet weak var perguntaTextField: UITextField!
+
+    @IBOutlet weak var salvarPergunta: UIBarButtonItem!
+    @IBOutlet weak var voltarButton: UIBarButtonItem!
+    @IBOutlet weak var resposta1TextField: UITextField!
     @IBOutlet weak var resposta2: UITextField!
     @IBOutlet weak var resposta3: UITextField!
     override func viewDidLoad() {
@@ -18,21 +24,60 @@ class IncluirPerguntaViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+
     @IBAction func perguntaAction(_ sender: UITextField) {
-        sender.text=""
+        let verificaTexto = quiz.verificaTextField(sender.text!)
+        if verificaTexto == true{
+            perguntaTextField.text=""
+            perguntaTextField.textColor = UIColor.black
+        }
     }
     
+
     @IBAction func resposta1Action(_ sender: UITextField) {
-        sender.text=""
+        let verificaTexto = quiz.verificaTextField(sender.text!)
+        if verificaTexto == true{
+            resposta1TextField.text=""
+            resposta1TextField.textColor = UIColor.black
+        }
     }
+    
     
     @IBAction func resposta2Action(_ sender: UITextField) {
-        sender.text=""
+        let verificaTexto = quiz.verificaTextField(sender.text!)
+        if verificaTexto == true{
+            resposta2.text=""
+            resposta2.textColor = UIColor.black
+        }
     }
     
     @IBAction func resposta3Action(_ sender: UITextField) {
-        sender.text=""
+        let verificaTexto = quiz.verificaTextField(sender.text!)
+        if verificaTexto == true{
+            resposta3.text=""
+            resposta3.textColor = UIColor.black
+        }
     }
+    @IBAction func voltarAction(_ sender: UIBarButtonItem) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let incluirTableViewController = storyBoard.instantiateViewController(withIdentifier: "IncluirEditar") as! incluirTableViewController
+        self.present(incluirTableViewController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func salvarPerguntaAction(_ sender: UIBarButtonItem) {
+        //let verificaPergunta = quiz.verificaTextField(perguntaTextField.text)
+        //let verificaResposta1 = quiz.verificaTextField(resposta1TextField.text)
+        //let verificaReposta2 = quiz.verificaTextField(resposta2.text)
+        //let verificaReposta3 = quiz.verificaTextField(resposta3.text)
+        if ((perguntaTextField.text?.isEmpty)! || (resposta1TextField.text?.isEmpty)! || (resposta2.text?.isEmpty)! || (resposta3.text?.isEmpty)!){
+            print("Nulo")
+        }else{
+            quiz.cadastraPergunta(perguntaTextField.text!, resposta1TextField.text!, resposta2.text!, resposta3.text!)
+        }
+    }
+    
+    
     /*    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

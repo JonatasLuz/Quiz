@@ -61,7 +61,6 @@ class incluirTableViewController: UITableViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let IncluirPerguntaViewController = storyBoard.instantiateViewController(withIdentifier: "Incluir") as! IncluirPerguntaViewController
         self.present(IncluirPerguntaViewController, animated: true, completion: nil)
-        
     }
     /*
     // Override to support conditional editing of the table view.

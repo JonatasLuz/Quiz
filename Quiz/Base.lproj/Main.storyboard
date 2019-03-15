@@ -368,7 +368,18 @@
                                     <constraint firstAttribute="height" constant="70" id="DKg-iL-wpQ"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Incluir Pergunta" id="BZD-Wj-rXP"/>
+                                    <navigationItem title="Incluir Pergunta" id="BZD-Wj-rXP">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="hiF-fO-QrT">
+                                            <connections>
+                                                <action selector="voltarAction:" destination="lxl-8V-LWA" id="cVJ-h6-bTT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="4hD-da-edz">
+                                            <connections>
+                                                <action selector="salvarPerguntaAction:" destination="lxl-8V-LWA" id="UjO-PN-17q"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-b0-Zma">
@@ -377,22 +388,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-YW-9nj">
                                         <rect key="frame" x="10" y="10" width="300" height="300"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pergunta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="syk-Nw-IQ1">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pergunta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBo-ka-wbo">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="perguntaAction:" destination="lxl-8V-LWA" eventType="touchDown" id="qro-XP-e9D"/>
+                                                    <action selector="perguntaAction:" destination="lxl-8V-LWA" eventType="touchDown" id="OTR-pp-e5A"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Resposta Correto" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBo-ka-wbo">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Resposta Correta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-tx-eIb">
                                                 <rect key="frame" x="0.0" y="87" width="300" height="39.5"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="resposta1Action:" destination="lxl-8V-LWA" eventType="touchDown" id="efH-KR-aze"/>
+                                                    <action selector="resposta1Action:" destination="lxl-8V-LWA" eventType="touchDown" id="zEz-FW-k4w"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Resposta" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DbH-wH-8ZR">
@@ -441,9 +452,11 @@
                     </view>
                     <connections>
                         <outlet property="perguntaTextField" destination="LBo-ka-wbo" id="Ak8-ge-57N"/>
-                        <outlet property="resposta1TextField" destination="LBo-ka-wbo" id="UCR-2c-EaX"/>
+                        <outlet property="resposta1TextField" destination="Ga1-tx-eIb" id="fCt-aW-unh"/>
                         <outlet property="resposta2" destination="DbH-wH-8ZR" id="OaE-ar-xIk"/>
                         <outlet property="resposta3" destination="3fM-vI-K6e" id="DIF-bw-Udj"/>
+                        <outlet property="salvarPergunta" destination="4hD-da-edz" id="EJ3-I4-6s2"/>
+                        <outlet property="voltarButton" destination="hiF-fO-QrT" id="Vwl-l9-w0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Os5-AD-YKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -453,7 +466,7 @@
         <!--Incluir Table View Controller-->
         <scene sceneID="Ec1-uq-1Gg">
             <objects>
-                <tableViewController id="ock-0z-8gp" customClass="incluirTableViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IncluirEditar" id="ock-0z-8gp" customClass="incluirTableViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xoF-6i-8eW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -589,7 +602,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="240" height="240"/>
+        <image name="logo" width="500" height="500"/>
         <image name="lose" width="704" height="396"/>
     </resources>
     <inferredMetricsTieBreakers>
