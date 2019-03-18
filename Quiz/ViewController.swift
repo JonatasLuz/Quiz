@@ -12,11 +12,19 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var botaoSobre: UIButton!
     @IBOutlet weak var Iniciar: UIButton!
-    
+    var quiz : QuizViewModel!
 
     override func viewDidLoad() {
+        quiz = QuizViewModel()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier=="segueIncluir"{
+            let destVC : incluirTableViewController = segue.destination as! incluirTableViewController
+            destVC.quiz = quiz
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -61,6 +61,7 @@ class QuizViewModel{
         questaoCadastro.setResposta(resp: (resposta2,1))
         questaoCadastro.setResposta(resp: (resposta3,2))
         quiz.adicionaPergunta(questaoCadastro)
+        print("Qtd de questoes \(quiz.questoes.count)")
     }
     
 }

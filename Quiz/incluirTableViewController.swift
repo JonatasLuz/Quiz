@@ -12,7 +12,7 @@ class incluirTableViewController: UITableViewController {
     
     @IBOutlet var incluirPerguntaButton: UITableView!
     @IBOutlet weak var voltarMenu: UIBarButtonItem!
-    var quiz : QuizViewModel = QuizViewModel()
+    var quiz : QuizViewModel!
     var indexPath = -1
 
     override func viewDidLoad() {
@@ -31,7 +31,10 @@ class incluirTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+  
 
+    
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +49,7 @@ class incluirTableViewController: UITableViewController {
         //cell.textLabel?.text = quiz.questoes[indexPath.row].questao
         
         if let perguntaButton = cell.viewWithTag(1000) as? UIButton{
+            print(quiz.questoes[quiz.questaoAtual].questao)
             perguntaButton.setTitle(quiz.questoes[quiz.questaoAtual].questao, for:[])
             quiz.proximaPergunta()
         }
@@ -55,11 +59,13 @@ class incluirTableViewController: UITableViewController {
     @IBAction func voltarMenuAction(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let ViewController = storyBoard.instantiateViewController(withIdentifier: "menu") as! ViewController
+        ViewController.quiz = quiz
         self.present(ViewController, animated: true, completion: nil)
     }
     @IBAction func incluirPerguntaAction(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let IncluirPerguntaViewController = storyBoard.instantiateViewController(withIdentifier: "Incluir") as! IncluirPerguntaViewController
+        let IncluirPerguntaViewController = storyBoard.instantiateViewController(withIdentifier: "IncluirEditar") as! IncluirPerguntaViewController
+        IncluirPerguntaViewController.quiz = quiz
         self.present(IncluirPerguntaViewController, animated: true, completion: nil)
     }
     /*

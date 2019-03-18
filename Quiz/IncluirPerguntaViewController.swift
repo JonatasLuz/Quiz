@@ -10,7 +10,7 @@ import UIKit
 
 class IncluirPerguntaViewController: UIViewController {
     
-    var quiz: QuizViewModel = QuizViewModel()
+    var quiz: QuizViewModel!
     
     @IBOutlet weak var perguntaTextField: UITextField!
 
@@ -33,6 +33,8 @@ class IncluirPerguntaViewController: UIViewController {
         }
     }
     
+    
+  
 
     @IBAction func resposta1Action(_ sender: UITextField) {
         let verificaTexto = quiz.verificaTextField(sender.text!)
@@ -41,6 +43,9 @@ class IncluirPerguntaViewController: UIViewController {
             resposta1TextField.textColor = UIColor.black
         }
     }
+    
+
+    
     
     
     @IBAction func resposta2Action(_ sender: UITextField) {
@@ -60,20 +65,21 @@ class IncluirPerguntaViewController: UIViewController {
     }
     @IBAction func voltarAction(_ sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let incluirTableViewController = storyBoard.instantiateViewController(withIdentifier: "IncluirEditar") as! incluirTableViewController
+        let incluirTableViewController = storyBoard.instantiateViewController(withIdentifier: "Incluir") as! incluirTableViewController
+        incluirTableViewController.quiz = quiz
         self.present(incluirTableViewController, animated: true, completion: nil)
-        
     }
     
     @IBAction func salvarPerguntaAction(_ sender: UIBarButtonItem) {
-        //let verificaPergunta = quiz.verificaTextField(perguntaTextField.text)
-        //let verificaResposta1 = quiz.verificaTextField(resposta1TextField.text)
-        //let verificaReposta2 = quiz.verificaTextField(resposta2.text)
-        //let verificaReposta3 = quiz.verificaTextField(resposta3.text)
         if ((perguntaTextField.text?.isEmpty)! || (resposta1TextField.text?.isEmpty)! || (resposta2.text?.isEmpty)! || (resposta3.text?.isEmpty)!){
             print("Nulo")
         }else{
             quiz.cadastraPergunta(perguntaTextField.text!, resposta1TextField.text!, resposta2.text!, resposta3.text!)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let incluirTableViewController = storyBoard.instantiateViewController(withIdentifier: "Incluir") as! incluirTableViewController
+            quiz.questaoAtual = 0
+            incluirTableViewController.quiz = quiz
+            self.present(incluirTableViewController, animated: true, completion: nil)
         }
     }
     

@@ -357,7 +357,7 @@
         <!--Incluir Pergunta View Controller-->
         <scene sceneID="xw5-qs-Jhk">
             <objects>
-                <viewController storyboardIdentifier="Incluir" title="Incluir Pergunta View Controller" id="lxl-8V-LWA" customClass="IncluirPerguntaViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncluirEditar" title="Incluir Pergunta View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lxl-8V-LWA" customClass="IncluirPerguntaViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oR2-81-O6Z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -466,7 +466,7 @@
         <!--Incluir Table View Controller-->
         <scene sceneID="Ec1-uq-1Gg">
             <objects>
-                <tableViewController storyboardIdentifier="IncluirEditar" id="ock-0z-8gp" customClass="incluirTableViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Incluir" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ock-0z-8gp" customClass="incluirTableViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xoF-6i-8eW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -602,10 +602,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="500" height="500"/>
+        <image name="logo" width="240" height="240"/>
         <image name="lose" width="704" height="396"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m39-Wp-2sW"/>
+        <segue reference="T16-7n-cjW"/>
     </inferredMetricsTieBreakers>
 </document>
