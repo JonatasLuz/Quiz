@@ -14,8 +14,8 @@ class incluirTableViewController: UITableViewController {
     @IBOutlet weak var voltarMenu: UIBarButtonItem!
     var quiz : QuizViewModel!
     var indexPath = -1
-
     override func viewDidLoad() {
+        quiz.questaoAtual = 0
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -49,7 +49,6 @@ class incluirTableViewController: UITableViewController {
         //cell.textLabel?.text = quiz.questoes[indexPath.row].questao
         
         if let perguntaButton = cell.viewWithTag(1000) as? UIButton{
-            print(quiz.questoes[quiz.questaoAtual].questao)
             perguntaButton.setTitle(quiz.questoes[quiz.questaoAtual].questao, for:[])
             quiz.proximaPergunta()
         }

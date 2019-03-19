@@ -23,7 +23,7 @@ class PerguntaViewController: UIViewController {
     
     
     @IBOutlet weak var PerguntaAtualView: UILabel!
-    var quiz : QuizViewModel = QuizViewModel ()
+    var quiz : QuizViewModel!
     
     func mostraQuestao(_ questao : Pergunta){
         let questaoAtual : Pergunta = quiz.embaralhaRespostas(questao)
@@ -40,6 +40,7 @@ class PerguntaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Chama as perguntas a primeira vez
+        quiz.questaoAtual = 0
         mostraQuestao(quiz.questoes[quiz.questaoAtual])
         quiz.proximaPergunta()
     }

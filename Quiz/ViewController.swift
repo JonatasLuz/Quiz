@@ -12,10 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var botaoSobre: UIButton!
     @IBOutlet weak var Iniciar: UIButton!
-    var quiz : QuizViewModel!
+    var quiz : QuizViewModel = QuizViewModel()
 
     override func viewDidLoad() {
-        quiz = QuizViewModel()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -23,6 +22,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="segueIncluir"{
             let destVC : incluirTableViewController = segue.destination as! incluirTableViewController
+            destVC.quiz = quiz
+        }
+        if segue.identifier == "segueQuiz"{
+            let destVC : PerguntaViewController = segue.destination as! PerguntaViewController
             destVC.quiz = quiz
         }
     }
